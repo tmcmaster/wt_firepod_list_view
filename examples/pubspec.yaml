@@ -15,6 +15,7 @@ dependencies:
   form_builder_validators:
   flutter_riverpod:
   riverpod:
+  firebase_ui_database:
   wt_firebase_listview:
     git: git@github.com:tmcmaster/wt_firebase_listview.git
   wt_models:
@@ -37,3 +38,5 @@ dependency_overrides:
     path: ..
   wt_firepod:
     path: ../../wt_firepod
+  wt_settings:
+    path: ../../wt_settings

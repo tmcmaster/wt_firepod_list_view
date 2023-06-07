@@ -112,7 +112,7 @@ DEPENDENCIES:
   - firebase_database (from `Flutter/ephemeral/.symlinks/plugins/firebase_database/macos`)
   - firebase_remote_config (from `Flutter/ephemeral/.symlinks/plugins/firebase_remote_config/macos`)
   - FlutterMacOS (from `Flutter/ephemeral`)
-  - shared_preferences_foundation (from `Flutter/ephemeral/.symlinks/plugins/shared_preferences_foundation/macos`)
+  - shared_preferences_foundation (from `Flutter/ephemeral/.symlinks/plugins/shared_preferences_foundation/darwin`)
   - sign_in_with_apple (from `Flutter/ephemeral/.symlinks/plugins/sign_in_with_apple/macos`)
 
 SPEC REPOS:
@@ -150,7 +150,7 @@ EXTERNAL SOURCES:
   FlutterMacOS:
     :path: Flutter/ephemeral
   shared_preferences_foundation:
-    :path: Flutter/ephemeral/.symlinks/plugins/shared_preferences_foundation/macos
+    :path: Flutter/ephemeral/.symlinks/plugins/shared_preferences_foundation/darwin
   sign_in_with_apple:
     :path: Flutter/ephemeral/.symlinks/plugins/sign_in_with_apple/macos
 

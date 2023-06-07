@@ -46,3 +46,4 @@ app.*.map.json
 *.g.dart
 *.freezed.dart
 firebase_options.dart
+app_secrets.dart

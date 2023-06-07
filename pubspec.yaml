@@ -42,4 +42,6 @@ dev_dependencies:
 dependency_overrides:
   wt_firepod:
     path: ../wt_firepod
+  wt_settings:
+    path: ../wt_settings
 
