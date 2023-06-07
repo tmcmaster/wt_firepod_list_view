@@ -1,0 +1,39 @@
+name: wt_firebase_listview_examples
+description: App to test the wt_firebase_listview library.
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: '>=2.19.6 <3.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^1.0.2
+  flutter_lints: ^2.0.0
+  flutter_form_builder:
+  form_builder_validators:
+  flutter_riverpod:
+  riverpod:
+  wt_firebase_listview:
+    git: git@github.com:tmcmaster/wt_firebase_listview.git
+  wt_models:
+    git: git@github.com:tmcmaster/wt_models.git
+  wt_action_button:
+    git: git@github.com:tmcmaster/wt_action_button.git
+  wt_firepod:
+    git: git@github.com:tmcmaster/wt_firepod.git
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+
+flutter:
+  uses-material-design: true
+
+dependency_overrides:
+  wt_firebase_listview:
+    path: ..
+  wt_firepod:
+    path: ../../wt_firepod

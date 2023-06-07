@@ -1,0 +1,45 @@
+name: wt_firebase_listview
+description: A new Flutter package project.
+version: 0.0.1
+homepage:
+
+environment:
+  sdk: '>=2.19.6 <3.0.0'
+  flutter: ">=1.17.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  cupertino_icons:
+  font_awesome_flutter:
+  freezed:
+  freezed_annotation:
+  riverpod:
+  hooks_riverpod:
+  flutter_riverpod:
+  firebase_core:
+  firebase_auth:
+  firebase_database:
+  firebase_ui_database:
+  flutter_form_builder:
+  form_builder_validators:
+  flutter_animated_dialog:
+  logger:
+  wt_firepod:
+    git: git@github.com:tmcmaster/wt_firepod.git
+  wt_action_button:
+    git: git@github.com:tmcmaster/wt_action_button.git
+  wt_models:
+    git: git@github.com:tmcmaster/wt_models.git
+  wt_logging:
+    git: git@github.com:tmcmaster/wt_logging.git
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^2.0.0
+
+dependency_overrides:
+  wt_firepod:
+    path: ../wt_firepod
+
