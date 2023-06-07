@@ -38,5 +38,5 @@ dependency_overrides:
     path: ..
   wt_firepod:
     path: ../../wt_firepod
-  wt_settings:
-    path: ../../wt_settings
+#  wt_settings:
+#    path: ../../wt_settings
