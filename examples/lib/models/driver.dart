@@ -13,9 +13,9 @@ class Driver extends TitleIdJsonSupport<Driver> with _$Driver {
   static final _titles = ['id', 'name', 'phone'];
 
   factory Driver({
-    @JsonKey(name: 'id', defaultValue: '') required String id,
-    @JsonKey(name: 'name', defaultValue: '') required String name,
-    @JsonKey(name: 'phone', defaultValue: '') required String phone,
+    required String id,
+    required String name,
+    required String phone,
   }) = _Driver;
 
   Driver._();

@@ -19,7 +19,7 @@ class FirepodListTile<T extends IdJsonSupport> extends StatefulWidget {
     this.onTap,
     this.onSelect,
     this.initSelected = false,
-    this.padding = const EdgeInsets.all(0.0),
+    this.padding = EdgeInsets.zero,
   });
 
   @override
@@ -34,7 +34,7 @@ class _FirepodListTileState<T extends IdJsonSupport> extends State<FirepodListTi
     final item = Padding(
       padding: widget.padding,
       child: ListTile(
-        contentPadding: const EdgeInsets.all(0),
+        contentPadding: EdgeInsets.zero,
         style: ListTileStyle.list,
         horizontalTitleGap: 0,
         leading: widget.onSelect == null

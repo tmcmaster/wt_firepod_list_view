@@ -9,10 +9,13 @@ import 'package:wt_firebase_listview_examples/models/product.dart';
 import 'package:wt_firebase_listview_examples/widgets/product_list_tile.dart';
 import 'package:wt_firebase_listview_examples/widgets/selected_item_view.dart';
 import 'package:wt_firepod/wt_firepod.dart';
+import 'package:wt_logging/wt_logging.dart';
 
 const debug = false;
 
 class DatabaseExamplePage extends ConsumerWidget {
+  static final log = logger(DatabaseExamplePage);
+
   const DatabaseExamplePage({super.key});
 
   @override
@@ -80,21 +83,20 @@ class DatabaseExamplePage extends ConsumerWidget {
               product: product,
             ),
             selection: DataDefinitions.allProducts.selection,
-            canReorder: false,
-            canEdit: false,
-            canSelect: false,
           ),
         ),
       ),
       Example(
         'RiverpodList(Product)',
-        Consumer(builder: (_, ref, __) {
-          print('Consumer.build');
-          final products = ref.watch(DataDefinitions.allProducts.provider);
-          return products.isEmpty
-              ? const Text('No products yet')
-              : ProductListTile(product: products[0]);
-        }),
+        Consumer(
+          builder: (_, ref, __) {
+            log.d('Consumer.build');
+            final products = ref.watch(DataDefinitions.allProducts.provider);
+            return products.isEmpty
+                ? const Text('No products yet')
+                : ProductListTile(product: products[0]);
+          },
+        ),
       ),
     ];
 
@@ -106,10 +108,12 @@ class DatabaseExamplePage extends ConsumerWidget {
           bottom: TabBar(
             isScrollable: true,
             tabs: examples
-                .map((e) => Padding(
-                      padding: const EdgeInsets.all(12.0),
-                      child: Text(e.title),
-                    ))
+                .map(
+                  (e) => Padding(
+                    padding: const EdgeInsets.all(12.0),
+                    child: Text(e.title),
+                  ),
+                )
                 .toList(),
           ),
           backgroundColor: Colors.teal,
@@ -128,6 +132,7 @@ class DatabaseExamplePage extends ConsumerWidget {
 }
 
 class DataDefinitionExample extends Example {
+  static final log = logger(DataDefinitionExample);
   DataDefinitionExample(
     String title,
     FirepodListDefinition definition, {
@@ -144,7 +149,7 @@ class DataDefinitionExample extends Example {
               canSelect: canSelect,
               canReorder: canReorder,
               onSelect: (model) {
-                print('Selected: $model');
+                log.d('Selected: $model');
               },
             ),
           ),

@@ -1,47 +1,60 @@
 name: wt_firebase_listview
-description: A new Flutter package project.
+description: List component that directly binds firebase list.
 version: 0.0.1
-homepage:
+homepage: https://github.com/tmcmaster/wt_firebase_listview
+publish_to: none
 
 environment:
-  sdk: '>=2.19.6 <3.0.0'
-  flutter: ">=1.17.0"
+  sdk: ">=3.0.0 <4.0.0"
+
+# Scripts to be run with rps
+scripts:
+  init: flutter pub get
+  clean: flutter clean
+  refresh: flutter clean; flutter pub get
+  test: flutter test
+  analise: flutter analyze
+  freezed:
+    build: flutter pub run build_runner build --delete-conflicting-outputs
 
 dependencies:
+  cupertino_icons:
+  firebase_auth:
+  firebase_core:
+  firebase_database:
+  firebase_ui_database:
   flutter:
     sdk: flutter
-  cupertino_icons:
+  flutter_animated_dialog:
+  flutter_form_builder:
+  flutter_riverpod:
   font_awesome_flutter:
+  form_builder_validators:
   freezed:
   freezed_annotation:
   riverpod:
-  hooks_riverpod:
-  flutter_riverpod:
-  firebase_core:
-  firebase_auth:
-  firebase_database:
-  firebase_ui_database:
-  flutter_form_builder:
-  form_builder_validators:
-  flutter_animated_dialog:
-  logger:
-  wt_firepod:
-    git: git@github.com:tmcmaster/wt_firepod.git
+  uuid:
   wt_action_button:
-    git: git@github.com:tmcmaster/wt_action_button.git
-  wt_models:
-    git: git@github.com:tmcmaster/wt_models.git
+    git: https://github.com/tmcmaster/wt_action_button.git
+  wt_firepod:
+    git: https://github.com/tmcmaster/wt_firepod.git
   wt_logging:
-    git: git@github.com:tmcmaster/wt_logging.git
+    git: https://github.com/tmcmaster/wt_logging.git
+  wt_models:
+    git: https://github.com/tmcmaster/wt_models.git
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  flutter_lints: ^2.0.0
 
-dependency_overrides:
+flutter:
+  uses-material-design: true
+
+#dependency_overrides:
 #  wt_firepod:
 #    path: ../wt_firepod
+#  wt_logging:
+#    path: ../wt_logging
 #  wt_settings:
 #    path: ../wt_settings
 

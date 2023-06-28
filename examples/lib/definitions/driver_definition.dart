@@ -6,15 +6,11 @@ import 'package:wt_firebase_listview_examples/widgets/driver_list_tile.dart';
 
 class DriverDefinition extends FirepodListDefinition<Driver> {
   DriverDefinition({
-    String path = 'v1/driver',
-    String orderBy = 'name',
-    String? equalTo,
-    int Function(Driver a, Driver b)? sortWith,
+    super.path = 'v1/driver',
+    super.orderBy = 'name',
+    super.equalTo,
+    super.sortWith,
   }) : super(
-          path: path,
-          orderBy: orderBy,
-          equalTo: equalTo,
-          sortWith: sortWith,
           convertFrom: Driver.from,
           convertTo: Driver.to,
           formItemDefinitions: {

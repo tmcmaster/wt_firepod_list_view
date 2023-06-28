@@ -18,10 +18,12 @@ class SelectedItemsView<T extends TitleIdJsonSupport<T>> extends ConsumerWidget 
     return Consumer(
       builder: (_, ref, __) => Row(
         children: selected
-            .map((i) => Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Text(i.getTitle()),
-                ))
+            .map(
+              (i) => Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Text(i.getTitle()),
+              ),
+            )
             .toList(),
       ),
     );

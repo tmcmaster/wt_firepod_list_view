@@ -3,13 +3,14 @@ import 'package:flutter_animated_dialog/flutter_animated_dialog.dart';
 import 'package:flutter_form_builder/flutter_form_builder.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:wt_action_button/utils/logging.dart';
 import 'package:wt_firebase_listview/wt_firebase_listview.dart';
 import 'package:wt_firebase_listview_examples/models/product.dart';
 import 'package:wt_firepod/wt_firepod.dart';
+import 'package:wt_logging/wt_logging.dart';
 
 final selectedItemsProvider = StateNotifierProvider<FirepodSelectedItems<Product>, Set<Product>>(
-    (ref) => FirepodSelectedItems<Product>());
+  (ref) => FirepodSelectedItems<Product>(),
+);
 
 const debug = false;
 
@@ -21,7 +22,7 @@ class FormExamplePage extends StatefulWidget {
 }
 
 class _FormExamplePageState extends State<FormExamplePage> {
-  static final log = logger(FormExamplePage, level: Level.debug);
+  static final log = logger(FormExamplePage);
 
   final _formKey = GlobalKey<FormBuilderState>();
 
@@ -42,7 +43,8 @@ class _FormExamplePageState extends State<FormExamplePage> {
               Consumer(
                 builder: (_, ref, __) {
                   return Text(
-                      ref.read(FirebaseProviders.auth).currentUser?.email ?? 'Not Logged In');
+                    ref.read(FirebaseProviders.auth).currentUser?.email ?? 'Not Logged In',
+                  );
                 },
               ),
               const SizedBox(
@@ -77,74 +79,72 @@ class _FormExamplePageState extends State<FormExamplePage> {
                               'weight': '11',
                             },
                             skipDisabled: true,
-                            child: Column(children: [
-                              FormBuilderTextField(
-                                key: const ValueKey('Form:id'),
-                                autovalidateMode: AutovalidateMode.always,
-                                name: 'id',
-                                enabled: true,
-                                decoration: const InputDecoration(
-                                  labelText: 'ID',
-                                ),
-                                onChanged: (val) {},
-                                // valueTransformer: (text) => num.tryParse(text),
-                                keyboardType: TextInputType.text,
-                                textInputAction: TextInputAction.next,
-                              ),
-                              const SizedBox(height: 10),
-                              FormBuilderTextField(
-                                key: const ValueKey('Form:title'),
-                                autovalidateMode: AutovalidateMode.always,
-                                name: 'title',
-                                enabled: true,
-                                decoration: const InputDecoration(
-                                  labelText: 'Title',
-                                ),
-                                onChanged: (val) {},
-                                // valueTransformer: (text) => num.tryParse(text),
-                                keyboardType: TextInputType.text,
-                                textInputAction: TextInputAction.next,
-                              ),
-                              const SizedBox(height: 10),
-                              FormBuilderTextField(
-                                key: const ValueKey('Form:price'),
-                                autovalidateMode: AutovalidateMode.always,
-                                name: 'price',
-                                enabled: true,
-                                decoration: const InputDecoration(
-                                  labelText: 'Price',
-                                ),
-                                onChanged: (val) {},
-                                valueTransformer: stringTpDouble,
-                                keyboardType: TextInputType.number,
-                                textInputAction: TextInputAction.next,
-                              ),
-                              const SizedBox(height: 10),
-                              FormBuilderTextField(
-                                key: const ValueKey('Form:weight'),
-                                autovalidateMode: AutovalidateMode.always,
-                                name: 'weight',
-                                enabled: true,
-                                decoration: const InputDecoration(
-                                  labelText: 'Weight',
-                                ),
-                                onChanged: (val) {},
-                                valueTransformer: stringTpDouble,
-                                keyboardType: TextInputType.number,
-                                textInputAction: TextInputAction.next,
-                              ),
-                              Row(
-                                mainAxisAlignment: MainAxisAlignment.end,
-                                children: [
-                                  IconButton(
-                                    onPressed: () {
-                                      _persistItem();
-                                    },
-                                    icon: const Icon(FontAwesomeIcons.floppyDisk),
+                            child: Column(
+                              children: [
+                                FormBuilderTextField(
+                                  key: const ValueKey('Form:id'),
+                                  autovalidateMode: AutovalidateMode.always,
+                                  name: 'id',
+                                  decoration: const InputDecoration(
+                                    labelText: 'ID',
                                   ),
-                                ],
-                              )
-                            ]),
+                                  onChanged: (val) {},
+                                  // valueTransformer: (text) => num.tryParse(text),
+                                  keyboardType: TextInputType.text,
+                                  textInputAction: TextInputAction.next,
+                                ),
+                                const SizedBox(height: 10),
+                                FormBuilderTextField(
+                                  key: const ValueKey('Form:title'),
+                                  autovalidateMode: AutovalidateMode.always,
+                                  name: 'title',
+                                  decoration: const InputDecoration(
+                                    labelText: 'Title',
+                                  ),
+                                  onChanged: (val) {},
+                                  // valueTransformer: (text) => num.tryParse(text),
+                                  keyboardType: TextInputType.text,
+                                  textInputAction: TextInputAction.next,
+                                ),
+                                const SizedBox(height: 10),
+                                FormBuilderTextField(
+                                  key: const ValueKey('Form:price'),
+                                  autovalidateMode: AutovalidateMode.always,
+                                  name: 'price',
+                                  decoration: const InputDecoration(
+                                    labelText: 'Price',
+                                  ),
+                                  onChanged: (val) {},
+                                  valueTransformer: stringTpDouble,
+                                  keyboardType: TextInputType.number,
+                                  textInputAction: TextInputAction.next,
+                                ),
+                                const SizedBox(height: 10),
+                                FormBuilderTextField(
+                                  key: const ValueKey('Form:weight'),
+                                  autovalidateMode: AutovalidateMode.always,
+                                  name: 'weight',
+                                  decoration: const InputDecoration(
+                                    labelText: 'Weight',
+                                  ),
+                                  onChanged: (val) {},
+                                  valueTransformer: stringTpDouble,
+                                  keyboardType: TextInputType.number,
+                                  textInputAction: TextInputAction.next,
+                                ),
+                                Row(
+                                  mainAxisAlignment: MainAxisAlignment.end,
+                                  children: [
+                                    IconButton(
+                                      onPressed: () {
+                                        _persistItem();
+                                      },
+                                      icon: const Icon(FontAwesomeIcons.floppyDisk),
+                                    ),
+                                  ],
+                                )
+                              ],
+                            ),
                           ),
                         ),
                       );
@@ -163,7 +163,7 @@ class _FormExamplePageState extends State<FormExamplePage> {
   void _persistItem() {
     _formKey.currentState!.save();
 
-    Map<String, dynamic> map = {..._formKey.currentState!.value};
+    final map = {..._formKey.currentState!.value};
     final product = Product.from.json(map);
     log.d(product);
   }

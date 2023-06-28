@@ -27,3 +27,7 @@ doc/api/
 .flutter-plugins-dependencies
 
 .idea
+*.g.dart
+*.freezed.dart
+firebase_options.dart
+app_secrets.dart

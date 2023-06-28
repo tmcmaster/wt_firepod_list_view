@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:wt_logging/wt_logging.dart';
 
 class FirebaseReorderDatabaseListView extends FirebaseDatabaseQueryBuilder {
-  static final log = logger(FirebaseReorderDatabaseListView, level: Level.warning);
+  static final log = logger(FirebaseReorderDatabaseListView);
 
   final void Function(
     DataSnapshot sourceDoc,
@@ -14,10 +14,10 @@ class FirebaseReorderDatabaseListView extends FirebaseDatabaseQueryBuilder {
 
   /// {@macro firebase_ui.firebase_database_list_view}
   FirebaseReorderDatabaseListView({
-    Key? key,
-    required Query query,
+    super.key,
+    required super.query,
+    super.pageSize = 10,
     required FirebaseItemBuilder itemBuilder,
-    int pageSize = 10,
     FirebaseLoadingBuilder? loadingBuilder,
     FirebaseErrorBuilder? errorBuilder,
     Axis scrollDirection = Axis.vertical,
@@ -29,11 +29,7 @@ class FirebaseReorderDatabaseListView extends FirebaseDatabaseQueryBuilder {
     EdgeInsets? padding,
     double? itemExtent,
     Widget? prototypeItem,
-    bool addAutomaticKeepAlives = true,
-    bool addRepaintBoundaries = true,
-    bool addSemanticIndexes = true,
     double? cacheExtent,
-    int? semanticChildCount,
     DragStartBehavior dragStartBehavior = DragStartBehavior.start,
     ScrollViewKeyboardDismissBehavior keyboardDismissBehavior =
         ScrollViewKeyboardDismissBehavior.manual,
@@ -41,11 +37,8 @@ class FirebaseReorderDatabaseListView extends FirebaseDatabaseQueryBuilder {
     Clip clipBehavior = Clip.hardEdge,
     required this.onReorder,
   }) : super(
-          key: key,
-          query: query,
-          pageSize: pageSize,
           builder: (context, snapshot, _) {
-            print('ReorderableListView.builder');
+            log.d('ReorderableListView.builder');
             if (snapshot.isFetching) {
               return loadingBuilder?.call(context) ??
                   const Center(child: CircularProgressIndicator());
@@ -73,8 +66,9 @@ class FirebaseReorderDatabaseListView extends FirebaseDatabaseQueryBuilder {
                 log.d('onOrder($oldIndex, $newIndex)');
 
                 final sourceDoc = snapshot.docs[oldIndex];
-                final sourceOrder = (sourceDoc.value as Map)['order'];
-                bool dragDown = (oldIndex < newIndex);
+                final sourceOrder = _getOrder(snapshot, oldIndex);
+
+                final dragDown = oldIndex < newIndex;
 
                 final nIndex = newIndex + (dragDown ? -1 : 0);
 
@@ -82,25 +76,33 @@ class FirebaseReorderDatabaseListView extends FirebaseDatabaseQueryBuilder {
                 final newNextPos = nIndex + 1;
 
                 log.d(
-                    'SourcePos($oldIndex) NewPrevPos($newPrevPos) NewPos($nIndex) NewNextPos($newNextPos): SourceOrder($sourceOrder)');
+                  'SourcePos($oldIndex) NewPrevPos($newPrevPos) NewPos($nIndex) NewNextPos($newNextPos): SourceOrder($sourceOrder)',
+                );
 
+                log.d('sdsddfsff fsdf sf');
                 final newPosIsFirst = nIndex == 0;
                 final newPosIsLast = nIndex + 1 == snapshot.docs.length;
 
-                final prevOrder = newPosIsFirst
-                    ? (snapshot.docs[0].value as Map)['order'] - 1
-                    : (snapshot.docs[newPrevPos].value as Map)['order'];
+                final prevOrder =
+                    newPosIsFirst ? _getOrder(snapshot, 0) : _getOrder(snapshot, newPrevPos);
 
                 final nextOrder = newPosIsLast
-                    ? (snapshot.docs[snapshot.docs.length - 1].value as Map)['order'] + 1
-                    : (snapshot.docs[newNextPos].value as Map)['order'];
+                    ? _getOrder(snapshot, snapshot.docs.length - 1)
+                    : _getOrder(snapshot, newNextPos);
 
-                final newOrder = (prevOrder + nextOrder) / 2;
+                if (prevOrder != null && nextOrder != null) {
+                  final newOrder = (prevOrder + nextOrder) / 2;
 
-                log.d(
-                    'SourceOrder($sourceOrder) PrevOrder($prevOrder) NewPos($newOrder) NextPos($nextOrder)');
+                  log.d(
+                    'SourceOrder($sourceOrder) PrevOrder($prevOrder) NewPos($newOrder) NextPos($nextOrder)',
+                  );
 
-                onReorder(sourceDoc, newOrder);
+                  onReorder(sourceDoc, newOrder);
+                } else {
+                  log.w(
+                    'SourceOrder($sourceOrder) PrevOrder($prevOrder) NewPos() NextPos($nextOrder)',
+                  );
+                }
               },
               scrollDirection: scrollDirection,
               reverse: reverse,
@@ -115,7 +117,15 @@ class FirebaseReorderDatabaseListView extends FirebaseDatabaseQueryBuilder {
               keyboardDismissBehavior: keyboardDismissBehavior,
               restorationId: restorationId,
               clipBehavior: clipBehavior,
+              scrollController: controller,
             );
           },
         );
+
+  static double? _getOrder(FirebaseQueryBuilderSnapshot snapshot, int index) {
+    final value = snapshot.docs[index].value;
+    final map = value == null ? null : value as Map;
+    final order = map == null || (map.length - 1) < index ? null : map['order'] as num;
+    return order == null ? null : double.parse(order.toString());
+  }
 }

@@ -5,7 +5,7 @@ import 'package:firebase_ui_database/firebase_ui_database.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animated_dialog/flutter_animated_dialog.dart';
-import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:wt_firebase_listview/src/builders/firebase_reorder_list_view.dart';
 import 'package:wt_firebase_listview/src/firepod_list_tile.dart';
 import 'package:wt_firebase_listview/src/firepod_selected_items.dart';
@@ -84,7 +84,7 @@ class FirepodListView<T extends TitleIdJsonSupport<T>> extends ConsumerWidget {
   ) {
     final key = sourceDoc.key;
     if (key != null) {
-      final itemMap = sourceDoc.value as Map;
+      final itemMap = (sourceDoc.value ?? {}) as Map;
       itemMap['order'] = newOrder;
       final ref = tableRef.child(key);
       ref.set(itemMap);
@@ -100,7 +100,7 @@ class FirepodListView<T extends TitleIdJsonSupport<T>> extends ConsumerWidget {
     FirepodSelectedItems<T> selectionNotifier,
     EdgeInsets padding,
   ) {
-    final T model = snapshotToModel(snapshot);
+    final model = snapshotToModel(snapshot);
     return FirepodListTile<T>(
       key: ValueKey(model.getId()),
       model: model,
@@ -116,7 +116,7 @@ class FirepodListView<T extends TitleIdJsonSupport<T>> extends ConsumerWidget {
   }
 
   void _onSelect(T model, bool selected, FirepodSelectedItems selection) {
-    print('Selecting $model : $selected');
+    log.d('Selecting $model : $selected');
     if (selected) {
       selection.add(model);
     } else {
@@ -142,7 +142,7 @@ class FirepodListView<T extends TitleIdJsonSupport<T>> extends ConsumerWidget {
             itemToMap: itemToMap,
             formItemDefinitions: formItemDefinitions,
             onSubmit: (item) {
-              print('onSubmit Edited: $item');
+              log.d('onSubmit Edited: $item');
               _update(item, table);
             },
           ),
@@ -167,7 +167,7 @@ class FirepodListView<T extends TitleIdJsonSupport<T>> extends ConsumerWidget {
   }
 
   void _update(T model, DatabaseReference table) {
-    print('_update Edited: $model');
+    log.d('_update Edited: $model');
     final key = model.getId();
     final ref = table.child(key);
     final itemMap = itemToMap(model);

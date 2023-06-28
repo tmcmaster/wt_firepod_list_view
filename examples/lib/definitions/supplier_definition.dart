@@ -6,15 +6,11 @@ import 'package:wt_firebase_listview_examples/widgets/supplier_list_tile.dart';
 
 class SupplierDefinition extends FirepodListDefinition<Supplier> {
   SupplierDefinition({
-    String path = 'v1/supplier',
-    String orderBy = 'name',
-    String? equalTo,
-    int Function(Supplier a, Supplier b)? sortWith,
+    super.path = 'v1/supplier',
+    super.orderBy = 'name',
+    super.equalTo,
+    super.sortWith,
   }) : super(
-          path: path,
-          orderBy: orderBy,
-          equalTo: equalTo,
-          sortWith: sortWith,
           convertFrom: Supplier.from,
           convertTo: Supplier.to,
           formItemDefinitions: {

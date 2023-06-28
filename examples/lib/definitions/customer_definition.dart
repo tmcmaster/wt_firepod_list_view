@@ -7,15 +7,11 @@ import 'package:wt_firepod/wt_firepod.dart';
 
 class CustomerDefinition extends FirepodListDefinition<Customer> {
   CustomerDefinition({
-    String path = 'v1/customer',
-    String orderBy = 'order',
-    String? equalTo,
-    int Function(Customer a, Customer b)? sortWith,
+    super.path = 'v1/customer',
+    super.orderBy = 'order',
+    super.equalTo,
+    super.sortWith,
   }) : super(
-          path: path,
-          orderBy: orderBy,
-          equalTo: equalTo,
-          sortWith: sortWith,
           convertTo: Customer.to,
           convertFrom: Customer.from,
           formItemDefinitions: {

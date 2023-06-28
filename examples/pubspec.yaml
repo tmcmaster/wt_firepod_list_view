@@ -4,31 +4,47 @@ publish_to: 'none'
 version: 1.0.0+1
 
 environment:
-  sdk: '>=2.19.6 <3.0.0'
+  sdk: ">=3.0.0 <4.0.0"
+
+# Scripts to be run with rps
+scripts:
+  init: flutter pub get
+  clean: flutter clean
+  refresh: flutter clean; flutter pub get
+  test: flutter test
+  analise: flutter analyze
+  freezed:
+    build: flutter pub run build_runner build --delete-conflicting-outputs
 
 dependencies:
+  cupertino_icons: ^1.0.2
+  firebase_core:
+  firebase_database:
+  firebase_ui_database:
   flutter:
     sdk: flutter
-  cupertino_icons: ^1.0.2
-  flutter_lints: ^2.0.0
+  flutter_animated_dialog:
   flutter_form_builder:
-  form_builder_validators:
+  flutter_lints: ^2.0.0
   flutter_riverpod:
+  font_awesome_flutter:
+  form_builder_validators:
+  freezed_annotation:
   riverpod:
-  firebase_ui_database:
-  wt_firebase_listview:
-    git: git@github.com:tmcmaster/wt_firebase_listview.git
-  wt_models:
-    git: git@github.com:tmcmaster/wt_models.git
   wt_action_button:
-    git: git@github.com:tmcmaster/wt_action_button.git
+    git: https://github.com/tmcmaster/wt_action_button.git
+  wt_firebase_listview:
+    git: https://github.com/tmcmaster/wt_firebase_listview.git
   wt_firepod:
-    git: git@github.com:tmcmaster/wt_firepod.git
+    git: https://github.com/tmcmaster/wt_firepod.git
+  wt_logging:
+    git: https://github.com/tmcmaster/wt_logging.git
+  wt_models:
+    git: https://github.com/tmcmaster/wt_models.git
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
-
 
 flutter:
   uses-material-design: true
@@ -36,7 +52,7 @@ flutter:
 dependency_overrides:
   wt_firebase_listview:
     path: ..
-  wt_firepod:
-    path: ../../wt_firepod
+#  wt_firepod:
+#    path: ../../wt_firepod
 #  wt_settings:
 #    path: ../../wt_settings

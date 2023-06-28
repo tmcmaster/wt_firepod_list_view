@@ -7,17 +7,13 @@ import 'package:wt_firepod/wt_firepod.dart';
 
 class ProductDefinition extends FirepodListDefinition<Product> {
   ProductDefinition({
-    String path = 'v1/product',
-    String orderBy = 'id',
-    String? equalTo,
-    int Function(Product a, Product b)? sortWith,
+    super.path = 'v1/product',
+    super.orderBy = 'id',
+    super.equalTo,
+    super.sortWith,
   }) : super(
-          path: path,
-          orderBy: orderBy,
-          equalTo: equalTo,
           convertFrom: Product.from,
           convertTo: Product.to,
-          sortWith: sortWith,
           formItemDefinitions: {
             'id': ModelFormDefinition<String>(
               label: 'ID',

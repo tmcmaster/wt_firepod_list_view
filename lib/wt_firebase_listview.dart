@@ -1,3 +1,4 @@
+/// List view component that auto syncs with a firebase list of objects.
 library wt_firebase_listview;
 
 export 'src/firepod_list_definition.dart';
