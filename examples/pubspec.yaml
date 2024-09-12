@@ -1,5 +1,5 @@
-name: wt_firebase_listview_examples
-description: App to test the wt_firebase_listview library.
+name: wt_firepod_list_view_examples
+description: App to test the wt_firepod_list_view library.
 publish_to: 'none'
 version: 1.0.0+1
 
@@ -32,10 +32,10 @@ dependencies:
   riverpod:
   wt_action_button:
     git: https://github.com/tmcmaster/wt_action_button.git
-  wt_firebase_listview:
-    git: https://github.com/tmcmaster/wt_firebase_listview.git
   wt_firepod:
     git: https://github.com/tmcmaster/wt_firepod.git
+  wt_firepod_list_view:
+    git: https://github.com/tmcmaster/wt_firepod_list_view.git
   wt_logging:
     git: https://github.com/tmcmaster/wt_logging.git
   wt_models:
@@ -52,9 +52,9 @@ flutter:
   uses-material-design: true
 
 dependency_overrides:
-  wt_firebase_listview:
-    path: ..
   wt_firepod:
     path: ../../wt_firepod
+  wt_firepod_list_view:
+    path: ..
   wt_settings:
     path: ../../wt_settings

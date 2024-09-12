@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:wt_firebase_listview_examples/models/driver.dart';
+import 'package:wt_firepod_list_view_examples/models/driver.dart';
 
 class DriverListTile extends StatelessWidget {
   final Driver driver;

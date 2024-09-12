@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_form_builder/flutter_form_builder.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:wt_firebase_listview/wt_firebase_listview.dart';
-import 'package:wt_firebase_listview_examples/models/product.dart';
 import 'package:wt_firepod/wt_firepod.dart';
+import 'package:wt_firepod_list_view/wt_firepod_list_view.dart';
+import 'package:wt_firepod_list_view_examples/models/product.dart';
 import 'package:wt_logging/wt_logging.dart';
 
 final selectedItemsProvider = StateNotifierProvider<FirepodSelectedItems<Product>, Set<Product>>(
@@ -139,7 +139,7 @@ class _FormExamplePageState extends State<FormExamplePage> {
                                       icon: const Icon(FontAwesomeIcons.floppyDisk),
                                     ),
                                   ],
-                                )
+                                ),
                               ],
                             ),
                           ),

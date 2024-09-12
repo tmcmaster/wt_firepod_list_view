@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:wt_firebase_listview_examples/models/product.dart';
+import 'package:wt_firepod_list_view_examples/models/product.dart';
 
 class ProductListTile extends StatelessWidget {
   final Product product;

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:wt_firebase_listview_examples/models/supplier.dart';
+import 'package:wt_firepod_list_view_examples/models/supplier.dart';
 
 class SupplierListTile extends StatelessWidget {
   final Supplier supplier;

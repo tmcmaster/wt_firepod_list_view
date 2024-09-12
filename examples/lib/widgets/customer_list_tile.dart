@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:wt_firebase_listview_examples/models/customer.dart';
+import 'package:wt_firepod_list_view_examples/models/customer.dart';
 
 class CustomerListTile extends StatelessWidget {
   final Customer customer;

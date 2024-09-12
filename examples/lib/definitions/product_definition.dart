@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:form_builder_validators/form_builder_validators.dart';
-import 'package:wt_firebase_listview/wt_firebase_listview.dart';
-import 'package:wt_firebase_listview_examples/models/product.dart';
-import 'package:wt_firebase_listview_examples/widgets/product_list_tile.dart';
 import 'package:wt_firepod/wt_firepod.dart';
+import 'package:wt_firepod_list_view/wt_firepod_list_view.dart';
+import 'package:wt_firepod_list_view_examples/models/product.dart';
+import 'package:wt_firepod_list_view_examples/widgets/product_list_tile.dart';
 
 class ProductDefinition extends FirepodListDefinition<Product> {
   ProductDefinition({

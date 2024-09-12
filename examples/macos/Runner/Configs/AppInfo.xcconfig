@@ -5,7 +5,7 @@
 // 'flutter create' template.
 
 // The application's name. By default this is also the title of the Flutter window.
-PRODUCT_NAME = wt_firebase_listview_examples
+PRODUCT_NAME = wt_firepod_list_view_examples
 
 // The application's bundle identifier
 PRODUCT_BUNDLE_IDENTIFIER = net.wonkytech.wtFirebaseListviewExamples

@@ -3,7 +3,7 @@ import 'package:flutter_form_builder/flutter_form_builder.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:form_builder_validators/form_builder_validators.dart';
 import 'package:uuid/uuid.dart';
-import 'package:wt_firebase_listview/src/model_form_definition.dart';
+import 'package:wt_firepod_list_view/src/model_form_definition.dart';
 import 'package:wt_logging/wt_logging.dart';
 import 'package:wt_models/wt_models.dart';
 
@@ -131,7 +131,7 @@ class _ModelFormState extends State<ModelForm> {
                   icon: const Icon(FontAwesomeIcons.floppyDisk),
                 ),
               ],
-            )
+            ),
           ],
         ),
       ),

@@ -1,8 +1,8 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:wt_firebase_listview_examples/models/customer.dart';
-import 'package:wt_firebase_listview_examples/models/driver.dart';
-import 'package:wt_firebase_listview_examples/models/supplier.dart';
 import 'package:wt_firepod/wt_firepod.dart';
+import 'package:wt_firepod_list_view_examples/models/customer.dart';
+import 'package:wt_firepod_list_view_examples/models/driver.dart';
+import 'package:wt_firepod_list_view_examples/models/supplier.dart';
 import 'package:wt_models/wt_models.dart';
 
 part 'delivery.freezed.dart';

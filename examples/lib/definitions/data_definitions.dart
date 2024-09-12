@@ -1,7 +1,7 @@
-import 'package:wt_firebase_listview_examples/definitions/customer_definition.dart';
-import 'package:wt_firebase_listview_examples/definitions/driver_definition.dart';
-import 'package:wt_firebase_listview_examples/definitions/product_definition.dart';
-import 'package:wt_firebase_listview_examples/definitions/supplier_definition.dart';
+import 'package:wt_firepod_list_view_examples/definitions/customer_definition.dart';
+import 'package:wt_firepod_list_view_examples/definitions/driver_definition.dart';
+import 'package:wt_firepod_list_view_examples/definitions/product_definition.dart';
+import 'package:wt_firepod_list_view_examples/definitions/supplier_definition.dart';
 
 mixin DataDefinitions {
   static final customers = CustomerDefinition();

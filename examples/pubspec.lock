@@ -1458,13 +1458,6 @@ packages:
       url: "https://github.com/tmcmaster/wt_app_scaffold.git"
     source: git
     version: "1.1.0+3"
-  wt_firebase_listview:
-    dependency: "direct main"
-    description:
-      path: ".."
-      relative: true
-    source: path
-    version: "0.0.1"
   wt_firepod:
     dependency: "direct main"
     description:
@@ -1472,6 +1465,13 @@ packages:
       relative: true
     source: path
     version: "1.0.0+1"
+  wt_firepod_list_view:
+    dependency: "direct main"
+    description:
+      path: ".."
+      relative: true
+    source: path
+    version: "0.0.1"
   wt_logging:
     dependency: "direct main"
     description:

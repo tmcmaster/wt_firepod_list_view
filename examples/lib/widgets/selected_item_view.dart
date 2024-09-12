@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:wt_firebase_listview/wt_firebase_listview.dart';
+import 'package:wt_firepod_list_view/wt_firepod_list_view.dart';
 import 'package:wt_models/wt_models.dart';
 
 class SelectedItemsView<T extends TitleIdJsonSupport<T>> extends ConsumerWidget {

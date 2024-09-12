@@ -67,6 +67,7 @@
       <excludeFolder url="file://$MODULE_DIR$/examples/macos/Flutter/ephemeral/.symlinks/plugins/firebase_core/example/.dart_tool" />
       <excludeFolder url="file://$MODULE_DIR$/examples/macos/Flutter/ephemeral/.symlinks/plugins/firebase_core/example/.pub" />
       <excludeFolder url="file://$MODULE_DIR$/examples/.idea" />
+      <excludeFolder url="file://$MODULE_DIR$/examples/hold" />
       <excludeFolder url="file://$MODULE_DIR$/examples/junk" />
       <excludeFolder url="file://$MODULE_DIR$/examples/macos" />
       <excludeFolder url="file://$MODULE_DIR$/junk" />

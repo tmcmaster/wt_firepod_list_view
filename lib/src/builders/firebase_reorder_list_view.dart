@@ -55,7 +55,7 @@ class FirebaseReorderDatabaseListView extends FirebaseDatabaseQueryBuilder {
             return ReorderableListView.builder(
               itemCount: snapshot.docs.length,
               itemBuilder: (context, index) {
-                log.v('ReorderableListView.builder');
+                log.t('Reorderable ListView.builder');
                 final isLastItem = index + 1 == snapshot.docs.length;
                 if (isLastItem && snapshot.hasMore) snapshot.fetchMore();
 

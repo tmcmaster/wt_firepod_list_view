@@ -1,7 +1,7 @@
-name: wt_firebase_listview
+name: wt_firepod_list_view
 description: List component that directly binds firebase list.
 version: 0.0.1
-homepage: https://github.com/tmcmaster/wt_firebase_listview
+homepage: https://github.com/tmcmaster/wt_firepod_list_view
 publish_to: none
 
 environment:

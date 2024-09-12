@@ -2,10 +2,10 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:wt_firebase_listview_examples/app_secrets.dart';
-import 'package:wt_firebase_listview_examples/firebase_options.dart';
-import 'package:wt_firebase_listview_examples/pages/database_example_page.dart';
 import 'package:wt_firepod/wt_firepod.dart';
+import 'package:wt_firepod_list_view_examples/app_secrets.dart';
+import 'package:wt_firepod_list_view_examples/firebase_options.dart';
+import 'package:wt_firepod_list_view_examples/pages/database_example_page.dart';
 import 'package:wt_logging/wt_logging.dart';
 
 void main() async {
