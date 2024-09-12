@@ -66,11 +66,15 @@
       <excludeFolder url="file://$MODULE_DIR$/examples/macos/Flutter/ephemeral/.symlinks/plugins/firebase_core/example/build" />
       <excludeFolder url="file://$MODULE_DIR$/examples/macos/Flutter/ephemeral/.symlinks/plugins/firebase_core/example/.dart_tool" />
       <excludeFolder url="file://$MODULE_DIR$/examples/macos/Flutter/ephemeral/.symlinks/plugins/firebase_core/example/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/examples/.idea" />
+      <excludeFolder url="file://$MODULE_DIR$/examples/junk" />
+      <excludeFolder url="file://$MODULE_DIR$/examples/macos" />
+      <excludeFolder url="file://$MODULE_DIR$/junk" />
     </content>
     <orderEntry type="jdk" jdkName="Android API 29 Platform" jdkType="Android SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" name="Dart Packages" level="project" />
     <orderEntry type="library" name="Dart SDK" level="project" />
     <orderEntry type="library" name="Flutter Plugins" level="project" />
+    <orderEntry type="library" name="Dart Packages" level="project" />
   </component>
 </module>

@@ -4,7 +4,6 @@ import 'package:firebase_database/firebase_database.dart';
 import 'package:firebase_ui_database/firebase_ui_database.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_animated_dialog/flutter_animated_dialog.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:wt_firebase_listview/src/builders/firebase_reorder_list_view.dart';
 import 'package:wt_firebase_listview/src/firepod_list_tile.dart';
@@ -125,11 +124,9 @@ class FirepodListView<T extends TitleIdJsonSupport<T>> extends ConsumerWidget {
   }
 
   void _onEdit(T model, DatabaseReference table, BuildContext context) {
-    showAnimatedDialog(
+    showDialog(
       context: context,
       barrierDismissible: true,
-      animationType: DialogTransitionType.slideFromRight,
-      alignment: Alignment.center,
       builder: (BuildContext context) {
         return Scaffold(
           appBar: AppBar(

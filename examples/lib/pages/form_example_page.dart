@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_animated_dialog/flutter_animated_dialog.dart';
 import 'package:flutter_form_builder/flutter_form_builder.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -52,11 +51,9 @@ class _FormExamplePageState extends State<FormExamplePage> {
               ),
               ElevatedButton(
                 onPressed: () {
-                  showAnimatedDialog(
+                  showDialog(
                     context: context,
                     barrierDismissible: true,
-                    animationType: DialogTransitionType.slideFromRight,
-                    alignment: Alignment.center,
                     builder: (BuildContext context) {
                       return Scaffold(
                         appBar: AppBar(
