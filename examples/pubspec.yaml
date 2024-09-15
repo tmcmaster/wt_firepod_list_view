@@ -31,15 +31,15 @@ dependencies:
   freezed_annotation:
   riverpod:
   wt_action_button:
-    git: https://github.com/tmcmaster/wt_action_button.git
+    git: git@github.com:tmcmaster/wt_action_button.git
   wt_firepod:
-    git: https://github.com/tmcmaster/wt_firepod.git
+    git: git@github.com:tmcmaster/wt_firepod.git
   wt_firepod_list_view:
-    git: https://github.com/tmcmaster/wt_firepod_list_view.git
+    path: ..
   wt_logging:
-    git: https://github.com/tmcmaster/wt_logging.git
+    git: git@github.com:tmcmaster/wt_logging.git
   wt_models:
-    git: https://github.com/tmcmaster/wt_models.git
+    git: git@github.com:tmcmaster/wt_models.git
 
 dev_dependencies:
   build_runner:
@@ -51,10 +51,10 @@ dev_dependencies:
 flutter:
   uses-material-design: true
 
-dependency_overrides:
-  wt_firepod:
-    path: ../../wt_firepod
-  wt_firepod_list_view:
-    path: ..
-  wt_settings:
-    path: ../../wt_settings
+#dependency_overrides:
+#  wt_firepod:
+#    path: ../../wt_firepod
+#  wt_firepod_list_view:
+#    path: ..
+#  wt_settings:
+#    path: ../../wt_settings

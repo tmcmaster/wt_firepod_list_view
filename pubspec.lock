@@ -138,10 +138,10 @@ packages:
     dependency: transitive
     description:
       name: color_blindness
-      sha256: "8e85c212aa21ed74e7067ed7ff0a3dce39a366023bd4ca17820981dc8681a6e6"
+      sha256: ad18ab64d8f61ba0bd6ef2a48ebe16a1c6dc57b54833606d6ef04c0f6f939f6d
       url: "https://pub.dev"
     source: hosted
-    version: "0.1.2"
+    version: "0.2.0"
   convert:
     dependency: transitive
     description:
@@ -162,10 +162,10 @@ packages:
     dependency: transitive
     description:
       name: csv
-      sha256: "63ed2871dd6471193dffc52c0e6c76fb86269c00244d244297abbb355c84a86e"
+      sha256: c6aa2679b2a18cb57652920f674488d89712efaf4d3fdf2e537215b35fc19d6c
       url: "https://pub.dev"
     source: hosted
-    version: "5.1.1"
+    version: "6.0.0"
   cupertino_icons:
     dependency: "direct main"
     description:
@@ -196,7 +196,7 @@ packages:
       path: "."
       ref: HEAD
       resolved-ref: c3e4938a24ace85fea8eaa919cc051815f36d444
-      url: "https://github.com/tmcmaster/date_time_picker.git"
+      url: "git@github.com:tmcmaster/date_time_picker.git"
     source: git
     version: "2.1.0"
   desktop_webview_auth:
@@ -219,10 +219,10 @@ packages:
     dependency: transitive
     description:
       name: device_info_plus
-      sha256: "77f757b789ff68e4eaf9c56d1752309bd9f7ad557cb105b938a7f8eb89e59110"
+      sha256: a7fd703482b391a87d60b6061d04dfdeab07826b96f9abd8f5ed98068acc0074
       url: "https://pub.dev"
     source: hosted
-    version: "9.1.2"
+    version: "10.1.2"
   device_info_plus_platform_interface:
     dependency: transitive
     description:
@@ -623,10 +623,10 @@ packages:
     dependency: transitive
     description:
       name: go_router
-      sha256: e1a30a66d734f9e498b1b6522d6a75ded28242bad2359a9158df38a1c30bcf1f
+      sha256: "2ddb88e9ad56ae15ee144ed10e33886777eb5ca2509a914850a5faa7b52ff459"
       url: "https://pub.dev"
     source: hosted
-    version: "10.2.0"
+    version: "14.2.7"
   google_identity_services_web:
     dependency: transitive
     description:
@@ -679,10 +679,10 @@ packages:
     dependency: transitive
     description:
       name: grouped_list
-      sha256: fef106470186081c32636aa055492eee7fc7fe8bf0921a48d31ded24821af19f
+      sha256: c52551bc17699e304634d4653b824a1aa7c6b1d3a2c1a0da1a80839f867353fb
       url: "https://pub.dev"
     source: hosted
-    version: "5.1.2"
+    version: "6.0.0"
   http:
     dependency: transitive
     description:
@@ -1276,17 +1276,17 @@ packages:
     dependency: transitive
     description:
       name: win32_registry
-      sha256: "723b7f851e5724c55409bb3d5a32b203b3afe8587eaf5dafb93a5fed8ecda0d6"
+      sha256: "21ec76dfc731550fd3e2ce7a33a9ea90b828fdf19a5c3bcf556fa992cfa99852"
       url: "https://pub.dev"
     source: hosted
-    version: "1.1.4"
+    version: "1.1.5"
   wt_action_button:
     dependency: "direct main"
     description:
       path: "."
       ref: HEAD
-      resolved-ref: a2766d79b31257a6fd1140d71907719d13c0204e
-      url: "https://github.com/tmcmaster/wt_action_button.git"
+      resolved-ref: "61ed85882099f03a93edc233122c748efc7af8d2"
+      url: "git@github.com:tmcmaster/wt_action_button.git"
     source: git
     version: "1.0.0+1"
   wt_app_scaffold:
@@ -1294,8 +1294,8 @@ packages:
     description:
       path: "."
       ref: HEAD
-      resolved-ref: "1a3352d41242f7ec483488fda71e1c8dd4d815df"
-      url: "https://github.com/tmcmaster/wt_app_scaffold.git"
+      resolved-ref: "7e1027ac5abed550a195ed425816b33d1d4fcf90"
+      url: "git@github.com:tmcmaster/wt_app_scaffold.git"
     source: git
     version: "1.1.0+3"
   wt_firepod:
@@ -1317,8 +1317,8 @@ packages:
     description:
       path: "."
       ref: HEAD
-      resolved-ref: "3d5c4c27ad0e1f4ae200f3330de86fbd51bdc45f"
-      url: "https://github.com/tmcmaster/wt_models.git"
+      resolved-ref: c0fb0c55bbd5364333be1027d2f002227933def6
+      url: "git@github.com:tmcmaster/wt_models.git"
     source: git
     version: "1.0.0+1"
   wt_settings:

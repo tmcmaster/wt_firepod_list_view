@@ -25,7 +25,6 @@ dependencies:
   firebase_ui_database:
   flutter:
     sdk: flutter
-#  flutter_animated_dialog:
   flutter_form_builder:
   flutter_riverpod:
   font_awesome_flutter:
@@ -35,13 +34,13 @@ dependencies:
   riverpod:
   uuid:
   wt_action_button:
-    git: https://github.com/tmcmaster/wt_action_button.git
+    git: git@github.com:tmcmaster/wt_action_button.git
   wt_firepod:
-    git: https://github.com/tmcmaster/wt_firepod.git
+    git: git@github.com:tmcmaster/wt_firepod.git
   wt_logging:
-    git: https://github.com/tmcmaster/wt_logging.git
+    git: git@github.com:tmcmaster/wt_logging.git
   wt_models:
-    git: https://github.com/tmcmaster/wt_models.git
+    git: git@github.com:tmcmaster/wt_models.git
 
 dev_dependencies:
   flutter_test:
