@@ -5,17 +5,8 @@ homepage: https://github.com/tmcmaster/wt_firepod_list_view
 publish_to: none
 
 environment:
-  sdk: ">=3.0.0 <4.0.0"
-
-# Scripts to be run with rps
-scripts:
-  init: flutter pub get
-  clean: flutter clean
-  refresh: flutter clean; flutter pub get
-  test: flutter test
-  analise: flutter analyze
-  freezed:
-    build: flutter pub run build_runner build --delete-conflicting-outputs
+  sdk: '>=3.1.0 <4.0.0'
+  flutter: '>=3.29.2'
 
 dependencies:
   cupertino_icons:

@@ -6,15 +6,6 @@ version: 1.0.0+1
 environment:
   sdk: ">=3.0.0 <4.0.0"
 
-# Scripts to be run with rps
-scripts:
-  init: flutter pub get
-  clean: flutter clean
-  refresh: flutter clean; flutter pub get
-  test: flutter test
-  analise: flutter analyze
-  freezed:
-    build: flutter pub run build_runner build --delete-conflicting-outputs
 
 dependencies:
   cupertino_icons:
